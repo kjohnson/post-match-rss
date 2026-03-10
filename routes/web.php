@@ -44,11 +44,13 @@ Route::get('/', function() {
 
     $channel = (new Channel)
 	    ->title('Post Match RSS')
+            ->url('https://post-match-rss.laravel.cloud/')
 	    ->appendTo($feed);
 
     $files->each(fn($file) =>
         (new Item)
-            ->title($file['name'])
+		->title($file['name'])
+	->guid($file['name'])
 	    ->url($file['download_url'])
     ->contentEncoded('<img src="' . $file['download_url'] . '"/>')
 		->appendTo($channel)
