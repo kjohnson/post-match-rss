@@ -5,11 +5,7 @@ use Suin\RSSWriter\Channel;
 use Suin\RSSWriter\Feed;
 use Suin\RSSWriter\Item;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/post-match-rss', function() {
+Route::get('/', function() {
     $owner      = 'griffisben';
     $repo       = 'Post_Match_App';
     $path       = 'Image_Files/MLS Next Pro 2026';
